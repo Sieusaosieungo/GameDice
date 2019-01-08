@@ -3,12 +3,7 @@ package arbitrator;
 import java.util.ArrayList;
 import java.util.Random;
 
-import dice.Dice1;
-import dice.Dice2;
-import dice.Dice3;
-import dice.Dice4;
-import dice.Dice5;
-import dice.IDice;
+import dice.Dice;
 import game.Game;
 import player.AVirtualPlayer;
 import player.Player;
@@ -19,7 +14,7 @@ import player.VirtualPlayer4;
 
 public class Arbitrator {
 	private ArrayList<Player> lstPlayer;
-	private ArrayList<IDice> lstDice;
+	private ArrayList<Dice> lstDice;
 	private ArrayList<AVirtualPlayer> lstVirtualPlayer;
 	private int turn;
 	private boolean isGameOver;
@@ -31,12 +26,12 @@ public class Arbitrator {
 	 */
 	public Arbitrator(ArrayList<String> _lstPlayer) {
 		// initialize Dice
-		lstDice = new ArrayList<IDice>();
-		lstDice.add(new Dice1());
-		lstDice.add(new Dice2());
-		lstDice.add(new Dice3());
-		lstDice.add(new Dice4());
-		lstDice.add(new Dice5());
+		lstDice = new ArrayList<Dice>();
+		for(int i=0;i<Game.MAX_DICE;i++) {
+			lstDice.add(new Dice(i+1));
+		}
+		
+		
 
 		// initialize Virtual Player
 		lstVirtualPlayer = new ArrayList<AVirtualPlayer>();
