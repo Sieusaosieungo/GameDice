@@ -1,6 +1,5 @@
 package dice;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Dice {
@@ -11,16 +10,16 @@ public class Dice {
 	}
 
 	public int dropDice() {
-		ArrayList<Integer> resultArray = new ArrayList<Integer>();
+		int[] resultArray = new int[25];
 
 		for (int i = 0; i < 24; i++) {
-			resultArray.add(i / 4 + 1);
+			resultArray[i] = i / 4 + 1;
 		}
+		resultArray[resultArray.length - 1] = id + 1;
 
-		resultArray.add(id + 1);
 		Random rand = new Random();
-		int rs = resultArray.get(rand.nextInt(resultArray.size()));
-		return rs;
+		int rs = resultArray[rand.nextInt(25)];
 
+		return rs;
 	};
 }

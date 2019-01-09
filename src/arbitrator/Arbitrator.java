@@ -27,11 +27,9 @@ public class Arbitrator {
 	public Arbitrator(ArrayList<String> _lstPlayer) {
 		// initialize Dice
 		lstDice = new ArrayList<Dice>();
-		for(int i=0;i<Game.MAX_DICE;i++) {
-			lstDice.add(new Dice(i+1));
+		for (int i = 0; i < Game.MAX_DICE; i++) {
+			lstDice.add(new Dice(i + 1));
 		}
-		
-		
 
 		// initialize Virtual Player
 		lstVirtualPlayer = new ArrayList<AVirtualPlayer>();

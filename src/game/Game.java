@@ -11,7 +11,7 @@ public class Game {
 	public static void main(String[] args) {
 		ArrayList<String> lstPlayer = new ArrayList<String>();
 		lstPlayer.add("Manh");
-		//lstPlayer.add("Duc");
+		lstPlayer.add("Duc");
 		//lstPlayer.add("Nam");
 		//lstPlayer.add("Ngoc");
 		Arbitrator arbitrator = new Arbitrator(lstPlayer);
